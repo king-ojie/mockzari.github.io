@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Zari Transport</title>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" media="all" href="https://rawgit.com/hankchizljaw/boilerform/master/dist/css/boilerform.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel ="stylesheet" type="text/css" href="styles/book.css"><link rel ="stylesheet" type="text/css" href="styles/form.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+    
+       
+
+</head>
+
+<body onload="getStorage()">
+    
+    <div class = "container" id="print">
+    <div class = "row"> <div class ="col-md-12">
+        
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="img/logo1.ico" style="width:100%; max-width:300px;">
+                            </td>
+                            
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Zari Transport Services <br>
+                                
+                            </td>
+                            
+                            <td>
+                                 <strong>Passenger Name:</strong> <span id="disp-name" ></span><br>
+                                <strong> Email:</strong>
+                               <span id="disp-email" ></span>
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Find your Payment Details Below
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+            
+                  
+            
+        
+            
+            <tr class="item ">
+                <td>
+                   <strong> Destination </strong>
+                </td>
+                
+                <td >
+                <span id="disp-destination"></span>
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                <strong>Location</strong></td>
+                
+                <td >
+                   <span id="disp-location"></span>
+                </td>
+            </tr>
+            <tr class="item">
+                <td>
+                    <strong>Date</strong></td>
+                
+                <td >
+                  <p><span id="disp-date"></span></p> 
+                </td>
+            </tr>
+        </table>
+    </div>
+        <div class="row">
+        <input type="button" onclick="window.print();return false;" value="Print Receipt" class="pbut">
+        </div>
+
+        
+        
+        </div>
+        
+        </div>
+    </div>
+<script>
+		function getStorage() {
+		if (typeof(Storage) !== "undefined") {
+		document.getElementById("disp-name").innerHTML = localStorage.getItem("name"); 
+            document.getElementById("disp-email").innerHTML = localStorage.getItem("email");document.getElementById("disp-destination").innerHTML = localStorage.getItem("destination");
+            document.getElementById("disp-location").innerHTML = localStorage.getItem("locate"); document.getElementById("disp-date").innerHTML = localStorage.getItem("date"); }
+        }
+		</script>
+<!--<script src="script/script.js" ></script> -->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

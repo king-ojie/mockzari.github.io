@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Zari Transport</title>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" media="all" href="https://rawgit.com/hankchizljaw/boilerform/master/dist/css/boilerform.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="styles/form.css">
+    
+       
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>  
+            <a class="navbar-brand" href="#"> <img src="img/logo1.ico" alt="logo" width="" height="55"  class="logoimg img-fluid" align="left"> </a>
+        </div>
+        
+        <div class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="#">Home</a></li>
+                <li class="notactive"><a href="#about">About</a></li>
+                <li class="notactive"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+    <header>
+<div class="container-fluid">
+    <div class="row">
+        <div class ="col-sm-8">
+        <div class="header-text">
+   <h1>At <span style="color: #eb0909">Z</span>ari Transport we have redefined mobility; <br><p></p>with a touch of <span style="color: #efdb74">gold</span> and class! </h1>
+            
+            
+</div> 
+        </div>
+        
+        
+        <div class ="col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="reveal()" > Book Now!
+            </button>
+            <div class="formwrap" id="form">
+    <form >
+  Name:<br>
+  <input id= "nam" type="text" name="firstname" value="">
+  <br>
+ Email:<br>
+  <input id = "email" type="text" name="lastname" value="">
+  <br><br>Where are you travelling from? :<br>
+  <select name="location" id ="locate">
+				<option value="" selected disabled hidden>Choose here</option>
+  <option value="">Lagos</option>
+  <option value="">Ibadan</option>
+  <option value="">Abuja</option>
+  <option value="">Benin</option>
+</select>
+  <br><br>Destination<br>
+  <select name="destination" id ="destination">
+				<option value="" selected disabled hidden>Choose here</option>
+  <option value="">Lagos</option>
+  <option value="">Ibadan</option>
+  <option value="">Abuja</option>
+  <option value="">Benin</option>
+</select>
+  <br><br>Date of Departure<br>
+  <input type="date" name="date" id="date" class="departure" value="" autocorrect="off" required />
+        <input required class="rem">
+  <br><br>
+  <input type="submit" value="Submit" onclick="setStorage() ">
+        <script>
+            
+    function reveal(){
+        var item = document.getElementById("form"); 
+        if (item.style.display === "none") {
+            item.style.display = "block"}
+        else {
+            item.style.display = "block"
+        }
+        }        
+        
+ function setStorage() {
+if(typeof(Storage)!=="undefined") {
+        localStorage.setItem("name", document.getElementById("nam").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+     var realD = document.getElementById("destination");
+    localStorage.setItem("destination", realD.options[realD.selectedIndex].text);
+    
+    var realL = document.getElementById("locate")
+    localStorage.setItem("locate", realL.options[realL.selectedIndex].text);
+    
+    localStorage.setItem("date", document.getElementById("date").value);
+		alert("Click Ok to print receipt");
+		location.href = "C:/Users/USR/Desktop/slackcard/receipt.html";
+		}}
+		</script>
+</form>
+                
+            
+            </div>
+            
+        </div>
+
+              
+     
+    </div>
+    </div>
+
+            
+    
+    <div class="row">
+        
+       <!-- <div class="button" >
+   <button class="btn-primary"  id="btn-primary" >
+            view More</button>
+</div>   --> 
+        
+    </div>
+    </header>
+    <section >
+        <div id = "section">
+    <div class="container">
+        <div class = "row">
+            <div class = col-md-12> 
+                <div class="section-header" id="about-us">
+                    <h2>About Us</h2>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        <div class="container">
+        <div class = "row">
+            <div class = col-sm-4> 
+                <div class="about-img" id="">
+                    <img class="img.fluid img-thumbnail img-fluid" src="img/air.jpg" alt="AirTransport">
+                </div>
+            </div>
+            <div class = col-sm-4>
+                <div class="about-img" id="">
+                    <img class="img.fluid img-thumbnail img-fluid" src="img/air.jpg" alt="AirTransport">
+                </div> 
+            </div>
+            <div class = col-sm-4>
+                <div class="about-img" id="">
+                    <img class="img.fluid img-thumbnail img-fluid" src="img/air.jpg" alt="AirTransport">
+                </div>
+            </div>
+            
+            </div>
+        </div>
+           
+        
+    <div class="container">
+        <div class = "row">
+            <div class = "col-sm-4 section-text"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate libero mauris, vitae malesuada mauris porttitor at. Nam scelerisque enim ac libero mattis pharetra sit amet eget neque. Fusce et efficitur nunc. Quisque maximus dui ut tellus condimentum, sit amet sollicitudin ex porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse aliquet, arcu quis dignissim vehicula, velit nulla tincidunt neque, ac volutpat erat urna nec risus. Maecenas imperdiet, est sed pretium mollis, nulla ante rhoncus nisi, ac tincidunt est ipsum non quam. Nunc id leo quis ligula elementum efficitur.</p>
+            </div>
+            <div class = "col-sm-4 section-text"> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate libero mauris, vitae malesuada mauris porttitor at. Nam scelerisque enim ac libero mattis pharetra sit amet eget neque. Fusce et efficitur nunc. Quisque maximus dui ut tellus condimentum, sit amet sollicitudin ex porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse aliquet, arcu quis dignissim vehicula, velit nulla tincidunt neque, ac volutpat erat urna nec risus. Maecenas imperdiet, est sed pretium mollis, nulla ante rhoncus nisi, ac tincidunt est ipsum non quam. Nunc id leo quis ligula elementum efficitur.</p>
+            </div>
+            <div class = "col-sm-4 section-text" > <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate libero mauris, vitae malesuada mauris porttitor at. Nam scelerisque enim ac libero mattis pharetra sit amet eget neque. Fusce et efficitur nunc. Quisque maximus dui ut tellus condimentum, sit amet sollicitudin ex porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse aliquet, arcu quis dignissim vehicula, velit nulla tincidunt neque, ac volutpat erat urna nec risus. Maecenas imperdiet, est sed pretium mollis, nulla ante rhoncus nisi, ac tincidunt est ipsum non quam. Nunc id leo quis ligula elementum efficitur.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+    
+    
+<script>
+ function setStorage() {
+if(typeof(Storage)!=="undefined") {
+        localStorage.setItem("name", getElementById("name").value);
+		alert("Success");
+		location.href = "C:\Users\USR\Desktop\slack card/receipt.html";
+		}
+		</script>
+ <script src="script/script.js" ></script>   
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
